@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen flex">
+    
+    <aside class="w-64 bg-white shadow-md flex flex-col">
+        <div class="p-5 border-b">
+            <span class="text-dark-600">Logo</span>
+        </div>
+    
+
+    <nav class="px-2 py-4 flex-1">
+        <ul class="space-y-2">
+            <li>
+                <a href="#" onclick="showContent('dashboard')" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                    <span class="material-icons mr-3">dashboard</span> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('orders')" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                    <span class="material-icons mr-3">shopping_cart</span> Orders
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('inventory')" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                    <span class="material-icons mr-3">inventory_2</span> Inventory
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('reports')" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                    <span class="material-icons mr-3">bar_chart</span> Reports
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('employees')" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                    <span class="material-icons mr-3">groups</span> Employees
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('costumers')" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                    <span class="material-icons mr-3">people</span> Costumers
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <nav class="px-2 py-4 border-t">
+        <ul class="space-y-2">
+            <li>
+                <a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                    <span class="material-icons mr-3">settings</span> Settings
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                    <span class="material-icons mr-3">search</span> Search
+                </a>
+            </li>
+            <li>
+                <a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-100">
+                    <span class="material-icons mr-3">help_outline</span> Help
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="border-t">
+        <a href="#" class="flex items-center p-4 rounded-lg hover:bg-gray-100">
+            <span class="material-icons mr-3">account_circle</span> Profile
+        </a>
+    </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col">
+        <header class="flex items-center justify-between bg-white shadow px-6 py-4">
+            <h1 class="text-2x1 font-semibold"> ¡HOLA Administrador! </h1>
+            <button class="relative">
+                <span class="material-icons text-gray-600">notifications</span>
+                <span class="absolute top-0 right-0 w-2 h-2 rounded-full"></span>
+            </button>
+        </header>
+
+
+        <section id="dashboard" class="flex-1 grid grid-rows-2 gap-4 p-6">
+            <div class="bg-white shadow rounded-lg p-4">
+                <p class="text-gray-500"></p>
+            </div>
+            <div class="bg-white shadow rounded-lg p-4">
+                <p class="text-gray-500"></p>
+            </div>
+        </section>
+
+        <section id="orders" class="flex-1 p-6 hidden">
+            <div class="bg-white shadow rounded-lg p-4">
+                <h2 class="text-lg font-semibold">All Sale Orders</h2>
+                <table class="min-w-full text-left border">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="p-2 border">Date</th>
+                            <th class="p-2 border">Order</th>
+                            <th class="p-2 border">Costumer</th>
+                            <th class="p-2 border">Status</th>
+                            <th class="p-2 border">Amount</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </section>
+
+        <section id></section>
+        
+    </main>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="script.js"></script>
+</body>
+</html>
