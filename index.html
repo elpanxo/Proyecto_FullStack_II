@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body class="bg-gray-100 h-screen flex">
     
@@ -12,7 +13,6 @@
         <div class="p-5 border-b">
             <span class="text-dark-600">Logo</span>
         </div>
-    
 
     <nav class="px-2 py-4 flex-1">
         <ul class="space-y-2">
@@ -112,7 +112,97 @@
             </div>
         </section>
 
-        <section id></section>
+        <section id="employees" class="flex-1 p-6 hidden">
+            <div class="bg-white shadow rounded-lg p-4">
+                <h2 class="text-lg font-semibold mb-4">Registro de Usuario</h2>
+                
+                <div class="overflow-x-auto mb-6">
+                    <table class="min-w-full border text-left">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="p-2 border">Nombre</th>
+                                <th class="p-2 border">RUT</th>
+                                <th class="p-2 border">Nacimiento</th>
+                                <th class="p-2 border">Correo</th>
+                                <th class="p-2 border">Teléfono</th>
+                                <th class="p-2 border">Dirección</th>
+                                <th class="p-2 border">Cargo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeesTable"></tbody>
+                    </table>
+                </div>
+
+                <div id="confirmModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                    <div class="bg-white p-6 rounded shadow-lg w-80">
+                        <h3 class="text-lg font-semibold mb-4">¿Seguro que quieres eliminar los datos de este usuario?</h3>
+                        <div class="flex justify-end gap-2">
+                            <button onclick="closeModal()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancelar</button>
+                            <button id="confirmDeleteBtn" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-2 mb-4">
+                    <button onclick="openEmployeeForm()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                        Ingresar Empleado
+                    </button>
+                </div>
+
+                <form id="employeeForm" class="space-y-4 mb-6 hidden" onsubmit="addEmployee(event)">
+                    <div class="mb-3">
+                        <label class="block text-sm font-medium">Nombre Completo</label>
+                        <input type="text" id="nombre" required class="w-full border p-2">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="block text-sm font-medium">RUT</label>
+                        <input type="" id="rut" required class="w-full border p-2">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="block text-sm font-medium">Fecha de nacimiento</label>
+                        <input type="date" id="edad" required class="w-full border p-2">
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label class="block text-sm font-medium">Correo</label>
+                        <input type="email" id="correo" required class="w-full border p-2">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="block text-sm font-medium">Contraseña</label>
+                        <input type="password" id="contraseña" required class="w-full border p-2">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="block text-sm font-medium">Teléfono</label>
+                        <input type="tel" id="telefono" required class="w-full border p-2">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="block text-sm font-medium">Dirección</label>
+                        <input type="text" id="direccion" required class="w-full border p-2">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="block text-sm font-medium">Cargo</label>
+                        <input type="text" id="cargo" required class="w-full border p-2">
+                    </div>
+
+                    <div class="flex justify-between">
+                        <button type="button" onclick="toggleEmployeesForm()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
+                            Cancelar
+                        </button>
+
+                        <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+                            Registrar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
         
     </main>
 
