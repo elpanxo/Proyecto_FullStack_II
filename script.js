@@ -41,7 +41,7 @@ function addEmployee(event){
 function renderEmployees(){
     const tableBody = document.getElementById("employeesTable");
     tableBody.innerHTML = employees.map((emp, index) => `
-    <tr class="border-b hover:bg-gray-50 relative">
+      <tr class="border-b hover:bg-gray-50">
         <td class="p-2 border">${emp.nombre}</td>
         <td class="p-2 border">${emp.rut}</td>
         <td class="p-2 border">${emp.nacimiento}</td>
@@ -49,31 +49,23 @@ function renderEmployees(){
         <td class="p-2 border">${emp.telefono}</td>
         <td class="p-2 border">${emp.direccion}</td>
         <td class="p-2 border">${emp.cargo}</td>
-        <td class="p-2 text-right relative">
-            <button onclick="toggleMenu(${index})"
-                class="px-2 py-1 rounded hover:bg-gray-200">⋮</button>
-            <div id="menu-${index}"
-                class="hidden absolute right-0 mt-1 bg-white shadow rounded border z-10">
-                <button onclick="editEmployee(${index}) 
-                    class="block w-full text-left px-4 py-2 hover:bg-gray-100">Editar</button>
-                <button onclick="deleteEmployee(${index}) 
-                    class="block w-full text-left px-4 py-2 hover:bg-gray-100">Eliminar</button>
-                </div>
-            </td>
-        </tr>
+        <td class="p-2 border text-center">
+          <button onclick="editEmployee(${index})" class="text-blue-600 hover:text-blue-800 mr-2">
+            Editar
+          </button>
+          <button onclick="confirmDelete(${index})" class="text-red-600 hover:text-red-800">
+            Eliminar
+          </button>
+        </td>
+      </tr>
     `).join("");
-}
-
-function toggleMenu(index){
-    const menu = document.getElementById(`menu-${index}`);
-    menu.classList.toggle("hidden");
 }
 
 function editEmployee(index){
     const emp = employees[index];
     document.getElementById("nombre").value = emp.nombre;
     document.getElementById("rut").value = emp.rut;
-    document.getElementById("nacimiento").value = emp.nacimiento;
+    document.getElementById("edad").value = emp.nacimiento; // CORREGIDO
     document.getElementById("correo").value = emp.correo;
     document.getElementById("contraseña").value = emp.contraseña;
     document.getElementById("telefono").value = emp.telefono;
@@ -82,11 +74,6 @@ function editEmployee(index){
 
     editingIndex = index;
     document.getElementById("employeeForm").classList.remove("hidden");
-}
-
-function deleteEmployee(index){
-    employees.splice(index, 1);
-    renderEmployees();
 }
 
 let employeeToDelete = null;
