@@ -1,5 +1,3 @@
-// Contenido del archivo Contacto.js
-
 import { isValidName, isValidEmail, isValidMessage, showError, clearError } from "./validaciones.js";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm) {
         contactForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Detiene el envío del formulario y la recarga de la página
+            event.preventDefault();
 
             const nameInput = document.getElementById('contact-name');
             const emailInput = document.getElementById('contact-email');
@@ -19,12 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let isFormValid = true;
 
-            // Limpiar errores previos
             clearError('name-error');
             clearError('email-error');
             clearError('message-error');
 
-            // Validar campos
             if (!isValidName(name)) {
                 showError('name-error', 'Por favor, ingresa un nombre válido.');
                 isFormValid = false;

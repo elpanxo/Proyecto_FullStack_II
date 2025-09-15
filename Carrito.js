@@ -119,7 +119,6 @@ function initializeCart() {
     }
 }
 
-// Finalizar compra
 function handleCheckout() {
     const user = getLoggedInUser();
     if (!user) {
@@ -154,7 +153,6 @@ function handleCheckout() {
     }
 }
 
-// Utilidades de usuario
 function getUsers() {
     return JSON.parse(localStorage.getItem('urbnluxe_users')) || [];
 }
@@ -173,7 +171,6 @@ function closeCart() {
     if (overlay) overlay.classList.add('hidden');
 }
 
-// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     loadCart();
     initializeCart();

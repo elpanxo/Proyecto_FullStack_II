@@ -1,5 +1,3 @@
-// Validaciones.js - Funciones de validación centralizadas
-
 function isValidEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!re.test(email)) return false;

@@ -1,5 +1,3 @@
-// Autenticacion.js - Lógica de inicio de sesión y registro mejorada
-
 // Función para obtener todos los usuarios del localStorage
 function getUsers() {
     return JSON.parse(localStorage.getItem('urbnluxe_users')) || [];
@@ -17,7 +15,6 @@ function getLoggedInUser() {
     return users.find(user => user.email === userEmail);
 }
 
-// Lógica principal
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
@@ -65,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         name, 
                         email, 
                         password, 
-                        purchases: [] // Inicializa un array para las compras
+                        purchases: [] 
                     };
                     users.push(newUser);
                     saveUsers(users);
@@ -93,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (user) {
                 localStorage.setItem('urbnluxe_current_user_email', user.email);
                 alert('¡Inicio de sesión exitoso!');
-                window.location.href = 'Productos.html'; // Redirección a la página de productos
+                window.location.href = 'Productos.html'; 
             } else {
                 alert('Credenciales incorrectas.');
             }
@@ -101,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Puedes agregar una función para cerrar sesión si lo necesitas
+// Función para cerrar sesión
 window.logout = function() {
     localStorage.removeItem('urbnluxe_current_user_email');
     alert('Sesión cerrada.');

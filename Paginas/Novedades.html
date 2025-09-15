@@ -11,19 +11,15 @@
   <link rel="stylesheet" href="Home.css">
 </head>
 <body class="bg-gray-50">
-  <!-- Notificación de carrito -->
   <div id="cart-notification" class="cart-notification">
     <span class="font-medium">¡Producto añadido al carrito!</span>
   </div>
 
-  <!-- Overlay -->
     <div id="overlay" class="overlay hidden"></div>
 
-  <!-- Navbar -->
   <nav class="bg-white shadow-md sticky top-0 z-30">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
       <a href="Home.html" class="text-2xl font-bold text-gray-800">URBN LUXE</a>
-      <!-- Links desktop -->
       <div class="hidden md:flex space-x-8 items-center">
         <a href="Home.html" class="text-gray-600 hover:text-gray-900 transition-colors">Inicio</a>
         <a href="Productos.html" class="text-gray-600 hover:text-gray-900 transition-colors">Productos</a>
@@ -35,7 +31,6 @@
           </a>
         </div>
       </div>
-      <!-- Icons -->
       <div class="flex items-center space-x-4">
         <div class="relative">
           <button id="cart-button" class="text-gray-600 hover:text-gray-900 transition-colors" aria-label="Abrir carrito">
@@ -51,7 +46,6 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="relative bg-gradient-to-r from-gray-900 to-gray-700 text-white py-20">
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="container mx-auto px-4 text-center relative z-10">
@@ -61,13 +55,11 @@
     </div>
   </section>
 
-  <!-- Novedades -->
   <section class="py-16 bg-white">
   <div class="container mx-auto px-0">
     <h2 class="text-3xl font-bold mb-4 text-gray-800">Colección de Temporada</h2>
     <p class="text-lg text-gray-600 mb-8">Las últimas tendencias que no te puedes perder</p>
     <div class="flex flex-col gap-8">
-      <!-- Novedad 1 -->
       <div class="bg-gray-100 rounded-xl shadow hover:shadow-lg transition p-0 overflow-hidden">
         <div class="w-full h-64 md:h-96 bg-60% bg-center" style="background-image: url('https://i.pinimg.com/736x/3a/b1/3e/3ab13eba408928a25e8bc8f6005391fc.jpg')"></div>
         <div class="p-8">
@@ -77,7 +69,6 @@
             Hemos reinventado la clásica prenda polo con tejidos más gruesos y confortables, como lanas suaves y algodones de punto, perfectos para mantener el estilo sin sacrificar la calidez.</p>
         </div>
       </div>
-      <!-- Novedad 2 -->
       <div class="bg-gray-100 rounded-xl shadow hover:shadow-lg transition p-0 overflow-hidden">
         <div class="w-full h-64 md:h-96 bg-60% bg-center" style="background-image: url('https://i.pinimg.com/736x/92/1d/c5/921dc54a7b26c76a4d121eb539fc5941.jpg')"></div>
         <div class="p-8">
@@ -87,7 +78,6 @@
              diseñadas para complementar tu vestimenta y añadir un toque de sofisticación a cada ocasión.</p>
         </div>
       </div>
-      <!-- Novedad 3 -->
       <div class="bg-gray-100 rounded-xl shadow hover:shadow-lg transition p-0 overflow-hidden">
         <div class="w-full h-64 md:h-96 bg-80% bg-center" style="background-image: url('https://i.pinimg.com/1200x/4b/18/d3/4b18d3843ad16e7655b5373c07b118cc.jpg')"></div>
         <div class="p-8">
@@ -101,34 +91,29 @@
   </div>
 </section>
 
-  <!-- Productos Destacados -->
   <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-4 text-gray-800">Productos Destacados</h2>
       <p class="text-lg text-gray-600 mb-8">Lo más vendido esta semana</p>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- Producto 1 -->
         <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 flex flex-col items-center">
           <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style="background-image: url('https://i.pinimg.com/1200x/fc/b9/89/fcb989c3552cc9f41d89862b0f067510.jpg')"></div>
           <h3 class="text-lg font-semibold mb-2">Camiseta Stussy Basic Logo</h3>
           <p class="text-gray-800 font-bold mb-4">$49.990</p>
           <button class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition add-to-cart-btn">Añadir al carrito</button>
         </div>
-        <!-- Producto 2 -->
         <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 flex flex-col items-center">
           <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style="background-image: url('https://i.pinimg.com/1200x/aa/30/77/aa3077bbebbc04a8e53947b36180c3f8.jpg')"></div>
           <h3 class="text-lg font-semibold mb-2">Reloj Calvin Klein Minimal</h3>
           <p class="text-gray-800 font-bold mb-4">$15.9990</p>
           <button class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition add-to-cart-btn">Añadir al carrito</button>
         </div>
-        <!-- Producto 3 -->
         <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 flex flex-col items-center">
           <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style="background-image: url('https://i.pinimg.com/1200x/16/6c/33/166c3304de2d3859c6065166cc0a03d8.jpg')"></div>
           <h3 class="text-lg font-semibold mb-2">Polera Calvin Klein Classic</h3>
           <p class="text-gray-800 font-bold mb-4">$39.990</p>
           <button class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition add-to-cart-btn">Añadir al carrito</button>
         </div>
-        <!-- Producto 4 -->
         <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 flex flex-col items-center">
           <div class="w-full h-48 bg-cover bg-center rounded-lg mb-4" style="background-image: url('https://i.pinimg.com/736x/ee/b1/95/eeb195ac89f62b61e8ea04dec64ddf14.jpg')"></div>
           <h3 class="text-lg font-semibold mb-2">Gafas de Sol Louis Vuitton</h3>
@@ -139,7 +124,6 @@
     </div>
   </section>
 
-  <!-- Carrito -->
    <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300 cart-drawer">
     <div class="cart-content">
       <div class="cart-header">
@@ -169,7 +153,6 @@
      </div>
     </aside>
 
-  <!-- Footer -->
   <footer class="bg-gray-800 text-white py-12 mt-16">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -203,7 +186,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="../Carrito.js"></script>
   <script src="../Productos.js"></script>
 </body>

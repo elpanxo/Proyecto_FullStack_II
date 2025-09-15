@@ -1,8 +1,3 @@
-/* ================================
-   Home.css - URBN LUXE (Optimizado)
-   ================================ */
-
-/* Variables CSS para consistencia */
 :root {
   --color-primary: #1f2937;
   --color-secondary: #4b5563;
@@ -59,7 +54,6 @@ body {
   padding: 0 1rem;
 }
 
-/* Utilidades */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
@@ -86,11 +80,7 @@ body {
 .w-full { width: 100%; }
 .h-full { height: 100%; }
 
-/* ================================
-   Componentes reutilizables
-   ================================ */
 
-/* Botones */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -156,9 +146,7 @@ body {
   padding: 1.5rem;
 }
 
-/* ================================
-   Navbar
-   ================================ */
+
 .navbar {
   background: var(--color-white);
   box-shadow: var(--shadow-md);
@@ -257,9 +245,7 @@ body {
   color: var(--color-gray-900);
 }
 
-/* ================================
-   Hero Section
-   ================================ */
+
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
     url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnhvMmd6N240ZjV5anIwNXhidXQ0Nzdubjl0amtzNWhmb3N4dTdqYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f6zPlLMBdrqvEpZ78a/giphy.gif')
@@ -316,9 +302,7 @@ body {
   background: var(--color-gray-100);
 }
 
-/* ================================
-   Categorías
-   ================================ */
+
 .categories-section {
   padding: 5rem 1rem;
 }
@@ -396,7 +380,6 @@ body {
   background: rgba(0,0,0,0.8);
 }
 
-/* Imágenes de categorías */
 .men-category {
   background-image: url("https://i.pinimg.com/736x/82/82/18/828218be259301023f61ee3a568c0499.jpg");
 }
@@ -410,9 +393,6 @@ body {
   background-image: url("https://i.pinimg.com/736x/79/fd/40/79fd407819528d3b43896113255babc8.jpg");
 }
 
-/* ================================
-   Productos
-   ================================ */
 .products-section {
   padding: 5rem 1rem;
   background: var(--color-light);
@@ -436,9 +416,6 @@ body {
   }
 }
 
-/* ================================
-   Newsletter
-   ================================ */
 .newsletter-section {
   padding: 5rem 1rem;
   background: var(--color-primary);
@@ -497,9 +474,6 @@ body {
   background: #ea580c;
 }
 
-/* ================================
-   Carrito
-   ================================ */
 .cart-drawer {
   position: fixed;
   top: 0;
@@ -699,9 +673,7 @@ body {
   cursor: not-allowed;
 }
 
-/* ================================
-   Footer
-   ================================ */
+
 .footer {
   background: var(--color-primary);
   color: var(--color-white);
@@ -784,9 +756,7 @@ body {
   color: var(--color-gray-400);
 }
 
-/* ================================
-   Notificación y Overlay
-   ================================ */
+
 .cart-notification {
   position: fixed;
   top: 1.25rem;
@@ -820,7 +790,6 @@ body {
   display: block;
 }
 
-/* Utilidades responsivas */
 @media (max-width: 640px) {
   .container {
     padding: 0 0.5rem;
@@ -839,9 +808,7 @@ body {
   }
 }
 
-/* ================================
-   Animaciones
-   ================================ */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -857,9 +824,7 @@ body {
   animation: fadeIn 0.5s ease forwards;
 }
 
-/* ================================
-   Estados de carga
-   ================================ */
+
 .loading {
   opacity: 0.7;
   pointer-events: none;
