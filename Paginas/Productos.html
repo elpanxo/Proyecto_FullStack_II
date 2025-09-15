@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos - URBN LUXE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Productos.css">
+  <link rel="stylesheet" href="Home.css">
+</head>
+<body class="bg-gray-50">
+  <!-- Notificación de carrito -->
+  <div id="cart-notification" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-md shadow-lg z-50 transform translate-x-full transition-transform duration-300">
+    <span class="font-medium">¡Producto añadido al carrito!</span>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-30">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="Home.html" class="text-2xl font-bold text-gray-800">URBN LUXE</a>
+    
+      <!-- Links desktop -->
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="Home.html" class="text-gray-600 hover:text-gray-900 transition-colors">Inicio</a>
+        <a href="Productos.html" class="text-gray-600 hover:text-gray-900 transition-colors font-semibold">Productos</a>
+        <a href="./Novedades.html" class="text-gray-600 hover:text-gray-900 transition-colors">Novedades</a>
+        <a href="./Contacto.html" class="text-gray-600 hover:text-gray-900 transition-colors">Contacto</a>
+        <div class="ml-4">
+          <a href="Login.html" class="text-gray-600 hover:text-gray-900 transition-colors">
+            <i class="fas fa-user mr-1"></i> Iniciar Sesión
+          </a>
+        </div>
+      </div>
+
+      <!-- Icons -->
+      <div class="flex items-center space-x-4">
+        <div class="relative">
+          <button id="cart-button" class="text-gray-600 hover:text-gray-900 transition-colors" aria-label="Abrir carrito">
+            <i class="fas fa-shopping-bag text-xl"></i>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+          </button>
+        </div>
+        <button class="md:hidden text-gray-600 hover:text-gray-900 transition-colors" aria-label="Abrir menú">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-gray-900 to-gray-700 text-white py-20">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Nuestra Colección</h1>
+      <p class="text-xl mb-8 animate-fade-in delay-100">Descubre las últimas tendencias en moda urbana premium</p>
+      <a href="#products" class="bg-white text-gray-800 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-all transform hover:scale-105 animate-fade-in delay-200">
+        Explorar Productos
+      </a>
+    </div>
+  </section>
+
+  <!-- Filtros -->
+  <section class="bg-white py-8 border-b">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap gap-4 justify-center items-center">
+        <div class="flex flex-col">
+          <label class="text-sm font-semibold mb-1">Categoría:</label>
+          <select class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-800">
+            <option>Todas las categorías</option>
+            <option>Ropa</option>
+            <option>Zapatos</option>
+            <option>Accesorios</option>
+          </select>
+        </div>
+        
+        <div class="flex flex-col">
+          <label class="text-sm font-semibold mb-1">Precio:</label>
+          <select class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-800">
+            <option>Todos los precios</option>
+            <option>10.000CLP - 30.000CLP</option>
+            <option>30.000CLP - 100.000CLP</option>
+            <option>100.000CLP+</option>
+          </select>
+        </div>
+        
+        <div class="flex flex-col">
+          <label class="text-sm font-semibold mb-1">Ordenar por:</label>
+          <select class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-800">
+            <option>Más recientes</option>
+            <option>Precio: Menor a Mayor</option>
+            <option>Precio: Mayor a Menor</option>
+            <option>Nombre A-Z</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos Grid -->
+  <section id="products" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Todos los Productos</h2>
+    
+    <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Los productos se cargarán dinámicamente desde Productos.js -->
+    </div>
+
+    <!-- Paginación -->
+    <div class="flex justify-center mt-12 space-x-2">
+      <button class="px-4 py-2 border rounded disabled:opacity-50">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="px-4 py-2 border rounded bg-gray-800 text-white">1</button>
+      <button class="px-4 py-2 border rounded">2</button>
+      <button class="px-4 py-2 border rounded">3</button>
+      <button class="px-4 py-2 border rounded">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Carrito -->
+   <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300 cart-drawer">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2>Tu Carrito</h2>
+        <button id="close-cart" class="close-cart" aria-label="Cerrar carrito">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal">0</span>
+        </div>
+        <div class="summary-row">
+          <span>Envío:</span>
+          <span id="cart-shipping">Gratis</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total:</span>
+          <span id="cart-total">$0</span>
+        </div>
+      </div>
+      <button id="checkout-btn" class="checkout-button">
+        Finalizar Compra
+      </button>
+     </div>
+    </aside>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12 mt-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">URBN LUXE</h3>
+          <p class="text-gray-400">Moda urbana con estilo y calidad. Las mejores marcas en un solo lugar.</p>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-bold mb-4">Enlaces rápidos</h3>
+          <ul class="space-y-2">
+            <li><a href="Home.html" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="Productos.html" class="text-gray-400 hover:text-white transition-colors">Productos</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sobre nosotros</a></li>
+            <li><a href="Contacto.html" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-bold mb-4">Contacto</h3>
+          <p class="text-gray-400">email@urbnluxe.com</p>
+          <p class="text-gray-400">+56 9 XXXX XXXX</p>
+          <p class="text-gray-400">Egaña 651, 5480000 Puerto Montt, Los Lagos</p>
+          
+          <div class="flex space-x-4 mt-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 URBN LUXE. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../Validaciones.js"></script>
+  <script src="../Autenticacion.js"></script>
+  <script src="../Contacto.js"></script>
+  <script src="../Productos.js"></script>
+  <script src="../Carrito.js"></script>
+</body>
+</html>

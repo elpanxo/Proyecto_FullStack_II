@@ -1,0 +1,232 @@
+
+/* Hero */
+.contact-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=1471&auto=format&fit=crop') center/cover no-repeat;
+  color: white;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.contact-hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.contact-hero p {
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-section {
+  padding: 5rem 1rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+.contact-info h2,
+.contact-form-container h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.contact-item i {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-right: 1rem;
+  margin-top: 0.25rem;
+}
+
+.contact-item h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-primary);
+}
+
+.contact-item p {
+  color: var(--color-gray-600);
+  line-height: 1.5;
+}
+
+/* Formulario de Contacto */
+.contact-form-container {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-form {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-gray-700);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.error-message {
+  display: block;
+  color: var(--color-error);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.submit-button {
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.submit-button:hover {
+  background: var(--color-gray-700);
+}
+
+.map-section {
+  padding: 0 1rem 5rem;
+}
+
+.map-section h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+
+.map-container {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* Estados de validación */
+.form-group.error input,
+.form-group.error textarea {
+  border-color: var(--color-error);
+}
+
+.form-group.success input,
+.form-group.success textarea {
+  border-color: var(--color-success);
+}
+
+.notification {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  z-index: 1000;
+  transform: translateX(150%);
+  transition: var(--transition);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+.notification.success {
+  background: var(--color-success);
+  color: var(--color-white);
+}
+
+.notification.error {
+  background: var(--color-error);
+  color: var(--color-white);
+}
+
+.notification.info {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.notification.show {
+  animation: slideInRight 0.3s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .contact-info h2,
+  .contact-form-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-item i {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}

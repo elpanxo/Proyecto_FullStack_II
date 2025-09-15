@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceso | URBN LUXE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="Home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+
+  <!-- Notificación de carrito -->
+  <div id="cart-notification" class="cart-notification">
+    <span class="font-medium">¡Producto añadido al carrito!</span>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay hidden"></div>
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-30">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="Home.html" class="text-2xl font-bold text-gray-800">URBN LUXE</a>
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="Home.html" class="text-gray-600 hover:text-gray-900 transition-colors">Inicio</a>
+        <a href="Productos.html" class="text-gray-600 hover:text-gray-900 transition-colors ">Productos</a>
+        <a href="Novedades.html" class="text-gray-600 hover:text-gray-900 transition-colors">Novedades</a>
+        <a href="Contacto.html" class="text-gray-600 hover:text-gray-900 transition-colors">Contacto</a>
+        <div class="ml-4">
+          <a href="Login.html" class="text-gray-600 hover:text-gray-900 transition-colors">
+            <i class="fas fa-user mr-1 font-semibold"></i> Iniciar Sesión
+          </a>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="relative">
+          <button id="cart-button" class="text-gray-600 hover:text-gray-900 transition-colors" aria-label="Abrir carrito">
+            <i class="fas fa-shopping-bag text-xl"></i>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+          </button>
+        </div>
+        <button class="md:hidden text-gray-600 hover:text-gray-900 transition-colors" aria-label="Abrir menú">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal (login/registro) -->
+  <main class="min-h-screen flex items-center justify-center py-16">
+    <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
+      <div class="text-center mb-6">
+        <h1 class="text-3xl font-bold text-gray-800">URBN LUXE</h1>
+      </div>
+      <h2 class="text-1xl font-bold mb-6 text-center" id="form-title">Iniciar Sesión</h2>
+
+      <!-- Formulario Login -->
+      <form id="login-form" class="space-y-4">
+        <div>
+          <label for="login-email" class="block font-medium">Correo electrónico</label>
+          <input type="email" id="login-email" maxlength="100" required autocomplete="email"
+                 class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+          <span class="error-message text-red-500 text-sm" id="login-email-error"></span>
+        </div>
+        <div>
+          <label for="login-password" class="block font-medium">Contraseña</label>
+          <input type="password" id="login-password" maxlength="10" required autocomplete="current-password"
+                 class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+          <span class="error-message text-red-500 text-sm" id="login-password-error"></span>
+        </div>
+        <button type="submit" class="w-full bg-gray-800 text-white py-2 rounded hover:bg-gray-700 transition">Iniciar Sesión</button>
+        <p class="text-sm text-center mt-2">
+          ¿No tienes cuenta?
+          <a href="#" id="go-to-register" class="text-blue-600 hover:underline">Regístrate</a>
+        </p>
+      </form>
+
+      <!-- Formulario Registro -->
+      <form id="register-form" class="space-y-4 hidden">
+        <div>
+          <label for="register-name" class="block font-medium">Nombre completo</label>
+          <input type="text" id="register-name" maxlength="100" required autocomplete="name"
+                 class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+          <span class="error-message text-red-500 text-sm" id="register-name-error"></span>
+        </div>
+        <div>
+          <label for="register-email" class="block font-medium">Correo electrónico</label>
+          <input type="email" id="register-email" maxlength="100" required autocomplete="email"
+                 class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+          <span class="error-message text-red-500 text-sm" id="register-email-error"></span>
+        </div>
+        <div>
+          <label for="register-password" class="block font-medium">Contraseña</label>
+          <input type="password" id="register-password" maxlength="10" required autocomplete="new-password"
+                 class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+          <span class="error-message text-red-500 text-sm" id="register-password-error"></span>
+        </div>
+        <div>
+          <label for="register-confirm" class="block font-medium">Confirmar contraseña</label>
+          <input type="password" id="register-confirm" maxlength="10" required autocomplete="new-password"
+                 class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+          <span class="error-message text-red-500 text-sm" id="register-confirm-error"></span>
+        </div>
+        <button type="submit" class="w-full bg-gray-800 text-white py-2 rounded hover:bg-gray-700 transition">Registrarse</button>
+        <p class="text-sm text-center mt-2">
+          ¿Ya tienes cuenta?
+          <a href="#" id="go-to-login" class="text-blue-600 hover:underline">Inicia sesión</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <!-- Carrito -->
+   <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300 cart-drawer">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2>Tu Carrito</h2>
+        <button id="close-cart" class="close-cart" aria-label="Cerrar carrito">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal">0</span>
+        </div>
+        <div class="summary-row">
+          <span>Envío:</span>
+          <span id="cart-shipping">Gratis</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total:</span>
+          <span id="cart-total">0</span>
+        </div>
+      </div>
+      <button id="checkout-btn" class="checkout-button">
+        Finalizar Compra
+      </button>
+     </div>
+    </aside>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12 mt-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-2">URBN LUXE</h3>
+          <p>Moda urbana con estilo y calidad.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2">Enlaces rápidos</h3>
+          <ul>
+            <li><a href="Home.html" class="hover:underline">Inicio</a></li>
+            <li><a href="Productos.html" class="hover:underline">Productos</a></li>
+            <li><a href="Novedades.html" class="hover:underline">Novedades</a></li>
+            <li><a href="Contacto.html" class="hover:underline">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2">Contacto</h3>
+          <p>email@urbnluxe.com</p>
+          <p>+56 9 XXXX XXXX</p>
+          <div class="flex space-x-4 mt-2">
+            <a href="#" aria-label="Instagram" class="hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter" class="hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-6 text-center text-sm">
+        &copy; 2025 URBN LUXE. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../Autenticacion.js"></script>
+  <script src="../Carrito.js"></script>
+  <script src="../Validaciones.js"></script>
+</body>
+</html>
